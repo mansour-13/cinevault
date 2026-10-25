@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:frontend/page/add_movies_page.dart';
 import 'package:frontend/page/movies_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -22,7 +23,17 @@ class HomePage extends StatelessWidget {
             },
           ),
           Text('TV Series'),
-          Text('Add Movie'),
+          ListTile(
+            leading: Icon(Icons.search),
+            title: Text('Add Movies'),
+            trailing: Icon(Icons.chevron_right),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const AddMoviesPage()),
+              );
+            },
+          ),
           Text('Statistics'),
         ],
       ),
